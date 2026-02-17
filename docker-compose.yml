@@ -1,0 +1,9 @@
+services:
+  hello_sdl:
+    build: .
+    image: "hello_sdl:latest"
+    volumes:
+      - .:/HELLO_SDL
+
+    stdin_open: true
+    tty: true
