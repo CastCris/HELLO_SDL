@@ -4,6 +4,13 @@ services:
     image: "hello_sdl:latest"
     volumes:
       - .:/HELLO_SDL
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=${DISPLAY}
+      - SDL_VIDEODRIVER=x11
+      # - SDL_VIDEODRIVER=wayland
 
     stdin_open: true
     tty: true
+
+    network_mode: host

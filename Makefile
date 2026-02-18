@@ -1,13 +1,11 @@
 CC = gcc
-CFLAGS = `sdl2-config --libs --cflags` -ggdb3 --std=c99 -Wall -Wextra -lSDL2_image -lm
+CFLAGS =  --std=c99 -Wall -Wextra 
+CLIBS = `sdl2-config --libs --cflags` -ggdb3 -lSDL2_image -lm
 
 SRC_C = \
-		. # \
-		../ANSI_C
+		.
 SRC_H = \
-		. \
-		tst/ \
-		tst/aaa/
+		.
 
 
 SRC_C_PATH = $(foreach \
@@ -33,34 +31,12 @@ EXEC = main
 all: $(EXEC)
 
 $(EXEC): $(SRC_O_PATH)
-	$(CC) -o $(EXEC) $(CFLAGS) $(SRC_H_PATH) $^
+	$(CC) -o $(EXEC) $(CFLAGS) $(SRC_H_PATH) $^ $(CLIBS)
 	# echo "$(EXEC) $^"
 
 $(SRC_O_PATH): %.o: %.c
-	$(CC) -c $^ $(CFLAGS) $(SRC_H_PATH) -o $@
+	$(CC) -c $^ $(CFLAGS) $(SRC_H_PATH) -o $@ $(CLIBS)
 	# echo "$@ $^"
 
 clean:
-	rm -r $(SRC_O_PATH)
-
-# obj_files = a.result b.o c.o
-# src_files = a.raw b.c c.c
-# 
-# all: $(obj_files)
-# .PHONY: all
-# 
-# $(filter %.o,$(obj_files)): %.o: %.c
-# 	echo "target: $@; prereq: $<"
-# 
-# $(filter %.result,$(obj_files)): %.result: %.raw
-# 	echo "target: $@; prereq: $<"
-# 
-# %.c:
-# 	touch $@
-# 
-# %.raw:
-# 	touch $@
-# 
-# clean:
-# 	rm -rf $(src_files)
-# 
+	rm -f $(SRC_O_PATH) $(EXEC)
