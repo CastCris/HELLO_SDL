@@ -27,7 +27,6 @@ int main(int argc, char *argv[])
 
 int main(int argc, char *argv[])
 {
-
     // returns zero on success else non-zero
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         printf("error initializing SDL: %s\n", SDL_GetError());

@@ -1,12 +1,18 @@
 *
 !*/
-!Makefile
+
 !.gitignore
 !Dockerfile
 !docker-compose.yml
-!docker-compose.linux.yml
-!docker-compose.wsl.yml
+!docker-compose*.yml
+!docker-compose*.yml
+!README.md
+!run.sh
+
+!CMakeLists.txt
+
 
 !*.c
 !*.h
-!*.md
+
+/**/build/**
