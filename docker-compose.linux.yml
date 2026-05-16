@@ -1,0 +1,4 @@
+services:
+  hello_sdl:
+    devices:
+      - /dev/dri

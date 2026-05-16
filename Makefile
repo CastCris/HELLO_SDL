@@ -32,11 +32,9 @@ all: $(EXEC)
 
 $(EXEC): $(SRC_O_PATH)
 	$(CC) -o $(EXEC) $(CFLAGS) $(SRC_H_PATH) $^ $(CLIBS)
-	# echo "$(EXEC) $^"
 
 $(SRC_O_PATH): %.o: %.c
 	$(CC) -c $^ $(CFLAGS) $(SRC_H_PATH) -o $@ $(CLIBS)
-	# echo "$@ $^"
 
 clean:
 	rm -f $(SRC_O_PATH) $(EXEC)

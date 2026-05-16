@@ -4,13 +4,13 @@ services:
     image: "hello_sdl:latest"
     volumes:
       - .:/HELLO_SDL
-      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}:${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}
+
     environment:
       - DISPLAY=${DISPLAY}
-      - SDL_VIDEODRIVER=x11
-      # - SDL_VIDEODRIVER=wayland
+      - SDL_VIDEODRIVER=wayland
+      - WAYLAND_DISPLAY=${WAYLAND_DISPLAY}
+      - XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR}
 
     stdin_open: true
     tty: true
-
-    network_mode: host
