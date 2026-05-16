@@ -1,16 +1,11 @@
-# WSL(Windows)
-docker compose \
- -f docker-compose.yml \
- -f docker-compose.wsl.yml \
- up --build -d
+# Type
+./run.sh
 
-# Linux
-docker compose \
- -f docker-compose.yml \
- -f docker-compose.linux.yml \
- up --build -d
+cmake -B build
 
-# Run container
-docker compose exec hello_sdl bash
-make
-./main
+cmake --build build --clean-first
+
+./build/Main
+
+# Requirements
+docker-compose version 5
