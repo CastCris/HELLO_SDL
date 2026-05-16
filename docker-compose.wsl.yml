@@ -2,6 +2,3 @@ services:
   hello_sdl:
     devices:
       - /dev/dxg
-
-    enviroment:
-      PULSE_SERVER: unix:/mnt/wslg/PulseServer
