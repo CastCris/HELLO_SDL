@@ -10,7 +10,7 @@ services:
     environment:
       - DISPLAY=${DISPLAY}
       - SDL_VIDEODRIVER=wayland
-      - WAYLAND_DISPLAY=wayland-0
+      - WAYLAND_DISPLAY=${WAYLAND_DISPLAY}
       - XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR}
 
     stdin_open: true
