@@ -1,0 +1,9 @@
+{
+    "version": 4,
+    "configurePresets": [
+        {
+            "name": "hello_sdl",
+            "binaryDir": "${sourceDir}/build"
+        }
+    ]
+}
