@@ -1,7 +1,7 @@
 # Type
 ./run.sh
 
-cmake -B build
+cmake --preset hello_sdl
 
 cmake --build build --clean-first
 
